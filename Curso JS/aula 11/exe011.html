@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Verificar Nacionalidade</h1>
+    Qual País voçê nasceu?: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick = 'verificar()'>
+    <div id ='origem'> País de origem: </div>
+    <script>
+        function verificar(){
+            var txtpais= window.document.getElementById('txtpais')// pega o q foi  digitado na caixa de texto e joga na variável "txtpais"
+            var origem = window.document.getElementById('origem')// seleciona a área do parágrafo com o resultado e joga navariavel "origem"
+            var nac = (txtpais.value)//copia o conteudo da variavel "txtpais", coloca na variavel "nac"
+            origem.innerHTML = `<p>Seu país de origem é ${nac}</p>`
+
+            if(nac == 'brasil'){
+                origem.innerHTML+= `<p>Sua nacionalidade é Brasileira</p>`
+            }else{
+                origem.innerHTML += `<p>Você é Estrangeiro</p>`
+            }
+
+        }
+    </script>
+</body>
+</html>
